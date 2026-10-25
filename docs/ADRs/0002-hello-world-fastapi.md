@@ -26,7 +26,7 @@ Created a hello-world-fastapi application in `/home/jpfeng/Dev/local-ci-agent/ap
    - Dependency installation verified using `uv sync`
 
 3. **Ruff linting and formatting**:
-   - ruff configuration at `/home/jpfeng/Dev/local-ci-agent/ruff.toml`
+   - `ruff.toml` configuration at `/home/jpfeng/Dev/local-ci-agent/apps/hello-world-fastapi/ruff.toml` (co-located with the FastAPI application)
    - `ruff check` validates code without errors
    - `ruff format` ensures consistent code style
 

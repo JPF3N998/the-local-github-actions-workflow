@@ -6,7 +6,7 @@
 - [x] 1.2 Add root endpoint returning greeting message and verify the endpoint responds correctly
 - [x] 1.3 Add health check endpoint and verify the health check responds correctly
 - [x] 1.4 Configure uvicorn to run the application and verify the server starts
-- [x] 1.5 Add uv-managed pyproject.toml with FastAPI and uvicorn dependencies and verify dependency installation succeeds
+- [x] 1.5 Add uv-managed pyproject.toml with fastapi[standard] dependencies and verify dependency installation succeeds
 
 ## 2. Linting and Formatting Configuration
 
@@ -17,6 +17,10 @@
 ## 3. Documentation
 
 - [x] 3.1 Add documentation for FastAPI setup and ruff usage and verify documentation is accurate
+
+## 4. Container Setup
+
+- [ ] 4.1 Create Dockerfile for production container with bare fastapi and uvicorn
 
 ## Workflow follow-up
 

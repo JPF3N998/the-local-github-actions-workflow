@@ -11,7 +11,7 @@ This is a greenfield change within a monorepo where the `apps/` directory exists
 - Provide a basic FastAPI application that serves requests and responds to health checks
 - Configure ruff linter with sensible default rules
 - Configure ruff formatter for consistent code style
-- Enable automated linting and formatting checks through CI
+- Enable automated linting and formatting checks through CI (planned for Phase 2)
 
 **Non-Goals:**
 
@@ -35,9 +35,18 @@ Ruff was selected as it consolidates linting and formatting into a single fast t
 
 ### Decision: Configure default ruff rules and formatter
 
-The design uses ruff's sensible defaults for linting and formatting, with a minimal `pyproject.toml` or `ruff.toml` configuration to be placed at the repository root.
+Ruff configuration (`ruff.toml`) is placed at `/home/jpfeng/Dev/local-ci-agent/apps/hello-world-fastapi/` to colocate linting with the application source.
 
 ### Decision: Use uv as package manager
+
+The project will use uv for dependency management instead of pip. uv provides faster dependency resolution, better caching, and a more modern Python packaging experience.
+
+### Decision: Use fastapi[standard] for development, bare fastapi for production
+
+- **Development**: `fastapi[standard]` includes the `fastapi` CLI (`uv run fastapi dev`), uvicorn, pydantic-settings, rich, and other dev helpers
+- **Production containers**: Use bare `fastapi` + `uvicorn` only for minimal deployment images
+
+This separation ensures development is ergonomic while production deployments are lean.
 
 The project will use uv for dependency management instead of pip. uv provides faster dependency resolution, better caching, and a more modern Python packaging experience. The FastAPI application dependencies will be managed through uv with a pyproject.toml file.
 
