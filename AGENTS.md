@@ -2,7 +2,7 @@
 
 ## Tooling
 - `opencode.json` configures two MCP servers:
-  - `github` — local MCP (`@modelcontextprotocol/server-github`), needs `GITHUB_TOKEN` env var (a repo-scoped PAT). Used for GH CLI/REST lookups during work.
+  - `github` — local MCP (`@modelcontextprotocol/server-github`), needs `GITHUB_TOKEN` env var (a repo-scoped PAT). Used for GH CLI/REST lookups during work. **If the GitHub MCP is available, use it for GitHub operations** (issues, PRs, branches, commits, reviews) instead of manual CLI calls.
   - `context7` — remote docs search. Use `"use context7"` or reference `context7` in prompts to pull current library docs (e.g. for MCP/GitHub setup).
 - No build, test, or lint steps yet (docs-only repo). When infra scripts land, document the commands here.
 
